@@ -15,6 +15,50 @@ class node{
     }
 };
 
+vector<int> zigzagTraversal(node* root){
+    vector<int> result;
+    if(root == NULL){
+        return result;
+    }
+
+    queue<node*> q;
+    q.push(root);
+
+    bool lefttoright = true;
+
+    while(!q.empty()){
+        int size = q.size();
+        vector<int> ans(size);
+        
+        for(int i =0; i<size ;i++){
+            node* frontNode  = q.front();
+            q.pop();
+
+            int index = lefttoright ? i : size-i-1;
+
+            ans[index] = frontNode->data;
+
+            if(frontNode->left){
+                q.push(frontNode->left);
+            }
+
+            if(frontNode->right ){
+                q.push(frontNode->right);
+            }
+        }
+
+        lefttoright = !lefttoright;
+
+        for(int i: ans){
+            result.push_back(i);
+            cout<<i<<" ";
+        }
+
+        cout<<endl;
+    }
+    return result;
+
+}
 
 void buildTree(node* &root){
     queue<node*> q;
@@ -48,43 +92,43 @@ void buildTree(node* &root){
     }
 }
 
-vector<int> zigzagTraversal(node* root){
-    vector<int> result;
-    if(root == NULL)
-       return result;
+// vector<int> zigzagTraversal(node* root){
+//     vector<int> result;
+//     if(root == NULL)
+//        return result;
      
-    queue<node*> q;
-    q.push(root);
-    bool lefttoright = true;
+//     queue<node*> q;
+//     q.push(root);
+//     bool lefttoright = true;
      
-    while(!q.empty()){
-        int size = q.size();
-        vector<int> ans(size);
-        for(int i = 0; i<size ; ++i){
-            node* frontend = q.front();
-            q.pop();
+//     while(!q.empty()){
+//         int size = q.size();
+//         vector<int> ans(size);
+//         for(int i = 0; i<size ; ++i){
+//             node* frontend = q.front();
+//             q.pop();
 
-            int index = lefttoright? i: size-i-1;
-            ans[index] = frontend->data;
+//             int index = lefttoright? i: size-i-1;
+//             ans[index] = frontend->data;
 
-            if(frontend->left){
-                q.push(frontend->left);
-            }
-            if(frontend->right){
-                q.push(frontend->right);
-            }            
-        }
+//             if(frontend->left){
+//                 q.push(frontend->left);
+//             }
+//             if(frontend->right){
+//                 q.push(frontend->right);
+//             }            
+//         }
 
-        lefttoright = !lefttoright;
+//         lefttoright = !lefttoright;
 
-        for(int val: ans){
-                result.push_back(val);
-                cout<<val<<" ";
-        }
-            cout<<endl;
-    }    
-    return result;
-}
+//         for(int val: ans){
+//                 result.push_back(val);
+//                 cout<<val<<" ";
+//         }
+//             cout<<endl;
+//     }    
+//     return result;
+// }
 
 int main(){
     node* root = NULL;
