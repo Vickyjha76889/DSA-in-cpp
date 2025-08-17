@@ -50,7 +50,7 @@ void createTree(node* &root){
 
 // my version code by my own 
 
-void isleaf(node* root){
+bool isleaf(node* root){
     return(root->left == NULL && root->right == NULL);
 }
 
@@ -66,22 +66,34 @@ void inorder(node*root){
 }
 
 void leftonly(node* root){
-    if(root->left == NULL || ifleaf(root)){
+    if(root->left == NULL || isleaf(root)){
         return;
     }
     cout<<root->data<<" ";
-    if(leftonly) (root->left);
+    if(root->left){
+    leftonly(root->left);
+    }
+    else{
+        leftonly(root->right);
+    } 
     
 }
 
 void rightonly(node* root){
-    if(root->right == NULL){
+    if(root->right == NULL || isleaf(root)){
         return;
     }
-    rightonly(root->right);
-    if(root != NULL ){
-        cout<<root->data<<" ";
+
+
+    if(root->right){
+        rightonly(root->right);
     }
+    else{
+        rightonly(root->left);
+    }
+    
+    cout<<root->data<<" ";
+    
 }
 
 void boundarytraversal(node* root){
