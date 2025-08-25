@@ -98,9 +98,6 @@ int kthAncestor(node* root, int k, int node){
     }
 }
 
-
-
-
 int main(){
     node* root = NULL;
     buildtree(root);
