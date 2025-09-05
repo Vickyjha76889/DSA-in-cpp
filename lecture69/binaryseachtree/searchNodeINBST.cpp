@@ -16,7 +16,7 @@ class node{
 };
 
 void find(node* &root, int data){
-    if(data == root->data){
+    if(data == root->data || root == NULL){
         cout<<"found the element";
         return ;
         
