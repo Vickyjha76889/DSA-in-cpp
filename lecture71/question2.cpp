@@ -135,8 +135,5 @@ int main(){
     BSTintoLL(root,list);
     cout<<"THE TRAVERSAL OF THE LINKED LIST IS :";
     traversalLL(list);
-
-    
-
     return 0;
 }

@@ -91,8 +91,6 @@ int height(node* root){
 
    int ans = max(left,right) + 1 ;
    return ans;
-
-    
 }
 
 int main(){
