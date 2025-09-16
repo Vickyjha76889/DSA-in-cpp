@@ -108,6 +108,7 @@ node* preorder(vector<int> arr){
 
 
 
+
 int main(){
     vector<int> arr = {20,10,5,15,13,35,30,42};
     node* root =  preorder(arr);
