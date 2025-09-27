@@ -31,9 +31,12 @@ class heap{
         if(size == 0){
             return ;
         }
+        // step1:-
         arr[1] = arr[size];
-        size--;
+        size--;  // Step 2:
 
+
+        //step3:-
         int i = 1;
         while(i <= size){
             int leftindex = 2*i;
