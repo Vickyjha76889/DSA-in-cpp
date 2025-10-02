@@ -70,7 +70,7 @@ bool isCbt(node* root, int i, int n ){
 bool isMaxheap(node* root){
     if(root == NULL) return true;
     if(root->left == NULL && root->right == NULL) return true;
-    if(root->right == NULL){
+    if(root->right == NULL){ 
         return (root->data > root->left->data);
     }else{
         bool left = isMaxheap(root->left);
