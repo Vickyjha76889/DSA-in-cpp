@@ -28,7 +28,8 @@ int ksorted(vector<vector<int>> &a , int k , int n){
     priority_queue<node*,vector<node*>,compare> minheap;
     int maxi = INT_MIN;
     int mini = INT_MAX;
-    
+
+    // create a minheap of first column elements of all the k lists
     for(int i = 0 ; i<k ;i++){
         int element = a[i][0];
         maxi = max(maxi,element);
@@ -51,7 +52,7 @@ int ksorted(vector<vector<int>> &a , int k , int n){
             end = maxi;
         }
 
-        if(col+1 > n){
+        if(col+1 > n){   //if the next column index excess the limit stop the process
             break;
         }
         
@@ -64,8 +65,6 @@ int ksorted(vector<vector<int>> &a , int k , int n){
     cout<<"Range start: "<<start<<" end: "<<end<<endl;
     return end - start;
     
-
-
 }
 
 int main(){
