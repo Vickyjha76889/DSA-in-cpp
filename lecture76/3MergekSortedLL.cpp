@@ -71,7 +71,7 @@ void printList(node* head) {
 node* createList(vector<int> arr) {
     if (arr.size() == 0) return NULL;
     node* head = new node(arr[0]);
-    node* tail = head;
+    node* tail = head; 
     for (int i = 1; i < arr.size(); i++) {
         tail->next = new node(arr[i]);
         tail = tail->next;
