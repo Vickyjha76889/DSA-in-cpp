@@ -22,7 +22,7 @@ How to Use
 Feel free to explore the repository. If you're looking for a specific solution, you can navigate to the corresponding folder. Each solution file is self-contained and should be easy to understand. The code is commented to explain the logic and the approach taken.
 If you want to run a solution locally:
  * Clone the repository:
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/Vickyjha76889/DSA-in-cpp
 
  * Navigate to the problem folder:
    cd your-repo-name/TwoSum
